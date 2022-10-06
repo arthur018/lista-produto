@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="Webalys-Kameleon.pics-Checklist.ico" type="image/x-icon">
+  <title>Cadastro de produtos</title>
+</head>
+<body>
+  <form method="get" action="./lista.js">
+    <input type="text" name="nome" placeholder="Nome do produto">
+    <input type="text" name="email" placeholder="Descrição do produto">
+    <input type="number" name="valor" placeholder="Valor do produto">
+    
+    <div class="field radiobox">
+      <span>Disponível para venda?</span>
+      <input type="radio" name="disponivel" id="sim" value="sim" checked><label for="sim">Sim</label>
+      <input type="radio" name="disponivel" id="nao" value="nao"><label for="nao">Não</label>
+      
+  </div>
+    <input type="submit" name="enviar" value="Cadastrar">    
+</form>
+  
+  
+</body>
+</html>
