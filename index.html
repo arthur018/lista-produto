@@ -1,27 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="Webalys-Kameleon.pics-Checklist.ico" type="image/x-icon">
-  <title>Cadastro de produtos</title>
-</head>
-<body>
-  <form method="get" action="./lista.js">
-    <input type="text" name="nome" placeholder="Nome do produto">
-    <input type="text" name="email" placeholder="Descrição do produto">
-    <input type="number" name="valor" placeholder="Valor do produto">
-    
-    <div class="field radiobox">
-      <span>Disponível para venda?</span>
-      <input type="radio" name="disponivel" id="sim" value="sim" checked><label for="sim">Sim</label>
-      <input type="radio" name="disponivel" id="nao" value="nao"><label for="nao">Não</label>
-      
-  </div>
-    <input type="submit" name="enviar" value="Cadastrar">    
-</form>
-  
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="Webalys-Kameleon.pics-Checklist.ico"
+      type="image/x-icon"
+    />
+    <title>Cadastro de produtos</title>
+    <style>
+      body {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-width: 100vw;
+      }
+
+      .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <form>
+          <input
+            onchange="addName(event)"
+            type="text"
+            name="nome"
+            placeholder="Nome do produto"
+          />
+          <input
+            onchange="addDescription(event)"
+            type="text"
+            name="produto-descrição"
+            placeholder="Descrição do produto"
+          />
+          <input
+            id="valor"
+            onchange="addValue(event)"
+            type="number"
+            name="valor"
+            placeholder="Valor do produto"
+          />
+
+          <div class="field radiobox">
+            <span>Disponível para venda?</span>
+            <input
+              onchange="addYes(event)"
+              type="radio"
+              name="disponivel"
+              id="sim"
+              value="sim"
+              checked
+            />
+            <label for="sim"> Sim </label>
+            <input
+              onchange="addNo(event)"
+              type="radio"
+              name="disponivel"
+              id="nao"
+              value="nao"
+            />
+            <label for="nao"> Não </label>
+          </div>
+        </form>
+        <button onclick="addProduct()" name="enviar">Cadastrar</button>
+        <button id="botão" onclick="refresh(event)" name="refrescar">
+          Novo cadastro
+        </button>
+        <ol id="lista-produtos"></ol>
+      </div>
+    </div>
+    <script src="./lista.js"></script>
+  </body>
 </html>
